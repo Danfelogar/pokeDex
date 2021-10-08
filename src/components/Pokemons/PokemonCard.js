@@ -6,18 +6,18 @@ import FavoriteContext from '../../contexts/favoriteContext';
 export const PokemonCard = (props) => {
 
     const { pokemon } = props;
-    console.log(pokemon)
+    // console.log(pokemon)
 
     const { favoritePokemons, updateFavoritePokemons } = useContext(FavoriteContext);
 
     const redHeart = "❤️";
     const blackHeart = "🖤";
 
-    const heart = favoritePokemons.includes(pokemon.name) ? redHeart : blackHeart;
+    const heart = favoritePokemons.includes(pokemon) ? redHeart : blackHeart;
 
     const clickHeart = (e) =>{
         e.preventDefault();
-        updateFavoritePokemons(pokemon.name);
+        updateFavoritePokemons(pokemon);
     }
     const colors = {
         grass: '#63BB5B',

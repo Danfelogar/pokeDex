@@ -1,13 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import { useHistory } from 'react-router';
 
 import './NavBar.css';
 import FavoriteContext from '../../contexts/favoriteContext';
 
 
 export const NavBar = ({onSearch}) => {
+
+    const history = useHistory();
 
     const { favoritePokemons } = useContext(FavoriteContext);
 
@@ -29,7 +31,9 @@ export const NavBar = ({onSearch}) => {
         <nav className="navBar">
             <div/>
             <div className="navBar-wrap-logo">
-                <img src="https://datadex.talzz.com/_images/graphics/logo.png" alt="logo" className="navBar-img" />
+                <img
+                onClick={() => history.push("/")}
+                src="https://datadex.talzz.com/_images/graphics/logo.png" alt="logo" className="navBar-img" />
             </div>
             <div className="navBar-wrap-input">
             <input
@@ -44,7 +48,9 @@ export const NavBar = ({onSearch}) => {
             ><FontAwesomeIcon icon={ faSearch } /></button>
             </div>
             <div className="navBar-icon" >
-            <FontAwesomeIcon className="navBar-icon-heart" icon={ faHeart } />{favoritePokemons.length}
+            <FontAwesomeIcon
+            onClick={() => history.push("/favoritespks")}
+            className="navBar-icon-heart" icon={ faHeart } />{favoritePokemons.length}
             </div>
         </nav>
     );

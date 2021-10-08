@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 import './App.css';
 import { getPokemon, getPokemonData, searchPokemon } from './api/api';
@@ -6,6 +11,7 @@ import { NavBar } from './components/NavBar/NavBar';
 import { Pokedex } from './components/Pokemons/Pokedex';
 import { FavoriteProvider } from './contexts/favoriteContext';
 import { Footer } from './components/Footer/Footer';
+import { FavoritesPokemons } from './components/NavBar/FavoritesPokemons';
 
 const localStoraceKey = "favorite_pokemon"
 
@@ -49,17 +55,18 @@ function App() {
     fetchPokemon();
   }, [page])
 
-  const updateFavoritePokemons = (name) =>{
+  const updateFavoritePokemons = (props) =>{
     const updated = [...favorites];
-    const isFavorite = favorites.indexOf(name);
+    const isFavorite = favorites.indexOf(props);
     if(isFavorite >= 0){
       updated.splice(isFavorite,1);
     } else {
-      updated.push(name);
+      updated.push(props);
     }
     SetFavorites(updated);
     window.localStorage.setItem(localStoraceKey,
       JSON.stringify(updated));//para guardar en el store todos mis corazoncitos
+      console.log(favorites);
   };
 
   const onSearch= async(pokemonName) => {
@@ -82,7 +89,7 @@ function App() {
     setLoading(false);
   }
 
-  console.log(pokemons)
+  // console.log(pokemons)
 
   return (
     <FavoriteProvider value={{
@@ -90,20 +97,30 @@ function App() {
       updateFavoritePokemons: updateFavoritePokemons
     }} >
       <div>
+      <Router>
         <NavBar onSearch={ onSearch } />
-        {
-          notFound
-          ?(<div className="notFound" >The searched pokemon was not found 😔</div>)
-          :(
-          <div className="App">
-          <Pokedex pokemons={ pokemons } page={ page } setPage={ setPage } total={ total } loading={ loading } />
-        </div>
-          )
-        }
+        <Switch>
+          <Route exact path="/">
+          {
+            notFound
+            ?(<div className="notFound" >The searched pokemon was not found 😔</div>)
+            :(
+              <div className="App">
+              <Pokedex pokemons={ pokemons } page={ page } setPage={ setPage } total={ total } loading={ loading } />
+              </div>
+            )
+          }
+          </Route>
+          <Route exact path="/favoritespks">
+            <FavoritesPokemons favorites={ favorites }  />
+          </Route>
+        </Switch>
         <Footer />
+      </Router>
       </div>
     </FavoriteProvider>
   );
 }
 
 export default App;
+
