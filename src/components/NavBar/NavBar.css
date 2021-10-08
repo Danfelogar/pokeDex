@@ -1,0 +1,106 @@
+.navBar {
+    background-color: #313131;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 0.5fr;
+    align-items: center;
+    grid-template-areas:"a . b c"
+}
+
+.navBar-wrap-logo {
+    grid-area: a;
+    width: 200px;
+}
+
+.navBar-img {
+    width: 100%;
+}
+
+.navBar-wrap-input {
+    grid-area: b;
+    overflow: hidden;
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.navBar-input {
+    width: 300px;
+    height: 50px;
+    background: #2b303b;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #fff;
+    padding-left: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+}
+.navBar-input:focus{
+    outline: none;
+}
+
+.navBar-input::-webkit-input-placeholder {
+    color: #65737e;
+}
+
+.navBar-input:-moz-placeholder { /* Firefox 18- */
+    color: #65737e;
+}
+
+.navBar-input::-moz-placeholder {  /* Firefox 19+ */
+    color: #65737e;
+}
+
+.navBar-input:-ms-input-placeholder {
+    color: #65737e;
+}
+
+.navBar-btn-search{
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    border: none;
+    background: #232833;
+    font-size: 23px;
+    height: 50px;
+    width: 50px;
+    color: #4f5b66;
+    opacity: 0;
+    font-size: 15pt;
+
+    -webkit-transition: all .55s ease;
+    -moz-transition: all .55s ease;
+    -ms-transition: all .55s ease;
+    -o-transition: all .55s ease;
+    transition: all .55s ease;
+}
+
+.navBar-wrap-input:hover .navBar-btn-search, .navBar-wrap-input:active .navBar-btn-search, .navBar-wrap-input:focus .navBar-btn-search {
+    outline: none;
+    opacity: 1;
+    margin-left: -50px;
+}
+
+.navBar-wrap-input:hover
+.navBar-btn-search:hover{
+    background: white;
+}
+
+.navBar-icon {
+    grid-area: c;
+    color:#fff;
+    justify-self: center;
+    font-size: 20px;
+    margin-right: 0 10px;
+}
+
+.navBar-icon-heart{
+    margin-right: 20px;
+}

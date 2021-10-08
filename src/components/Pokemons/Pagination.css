@@ -1,0 +1,20 @@
+.pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pagination button {
+    border: none;
+    color:  #fff;
+    background-color: #2b303b;
+    margin: 0 20px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    transition: 0.3s ease;
+}
+
+.pagination button:hover {
+    transform: scale(1.1);
+}
