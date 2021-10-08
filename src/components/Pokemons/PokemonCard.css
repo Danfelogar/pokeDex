@@ -6,11 +6,16 @@
     display: flex;
     flex-direction: row;
     padding: 10px;
-    margin: 10px;
+    margin: 10px 10px 10px 20px;
     min-height: 200px;
     min-width: 400px;
     max-height: 80%;
     max-width: 500px;
+    transition:  0.3s ease;
+}
+
+.pokemonCard:hover {
+    transform: scale(1.1);
 }
 
 .pokemonCard-img {
