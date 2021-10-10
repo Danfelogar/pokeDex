@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 
 import './PokemonCard.css';
 import FavoriteContext from '../../contexts/favoriteContext';
+import { Link } from 'react-router-dom';
 
 export const PokemonCard = (props) => {
 
@@ -43,9 +44,11 @@ export const PokemonCard = (props) => {
     const getColorByType= (type) => colors[type];
 
     return (
+    <Link to={`/PokemonCardDetail/${pokemon.id}`} >
         <div className="pokemonCard" >
+
             <div className="pokemonCard-img">
-                <img src={ pokemon.sprites.other.dream_world.front_default } alt="{pokemon.name}" />
+                <img src={ pokemon.sprites.other.dream_world.front_default } alt={pokemon.name} />
             </div>
             <div className="pokemonCard-content">
                 <div className="pokemonCard-text-1">
@@ -78,5 +81,6 @@ export const PokemonCard = (props) => {
                 </div>
             </div>
         </div>
+    </Link>
     )
 }

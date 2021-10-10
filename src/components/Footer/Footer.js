@@ -15,10 +15,10 @@ export const Footer = () => {
             </div>
             <div className="footer-social-networks">
             <a href="https://www.instagram.com/danfelo18/"
-            ><i class="fab fa-instagram"></i></a>
+            ><i className="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/daniel.pologarcia/"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.linkedin.com/in/daniel-felipe-polo-garcia-9a985b210/"
-            ><i class="fab fa-linkedin-in"></i></a>
+            ><i className="fab fa-linkedin-in"></i></a>
             </div>
 
         </nav>
