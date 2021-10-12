@@ -1,3 +1,5 @@
+/* Fron fase */
+
 .pokemonCard {
     background-color: #ffffff;
     box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.8);
@@ -34,6 +36,7 @@
 
 .pokemonCard-content {
     display: flex;
+    width: 100%;
     flex-direction: column;
     margin-left: 12px;
 }
@@ -42,6 +45,12 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+}
+
+.pokemonCard-text-1-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .pokemonCard-text-1 h3 {
@@ -53,7 +62,7 @@
     margin-right: 10px;
 }
 
-.pokemonCard-text-1 div {
+.pokemonCard-text-1 p {
     justify-self: end;
     font-size: 16px;
     font-weight: 400;
@@ -71,3 +80,74 @@
     padding: 0 45px;
     cursor: pointer;
 }
+
+/* Back fase */
+
+.pokemonCard-back {
+    color: #ffffff;
+    background-color: rgba(0,0,0,0.8);
+    box-shadow: 1px 1px 10px 5px #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 0px 25px 0px 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 20px;
+    margin: 10px 10px 10px 20px;
+    min-height: 200px;
+    min-width: 400px;
+    max-height: 80%;
+    max-width: 500px;
+    transition:  0.3s ease;
+}
+
+.pokemonCard-back-title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.pokemonCard-back-content{
+    display: grid;
+    grid-template-columns: 1.7fr 3fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 2px 0px;
+    grid-template-areas:
+    "a1 b1 c1"
+    "a2 b2 c2"
+    "a3 b3 c3"
+    "a4 b4 c4"
+    "a5 b5 c5"
+    "a6 b6 c6";
+}
+
+.pokemonCard-back-content h4{
+    font-size: 16px;
+    font-weight: 300;
+    justify-self: flex-start;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0 1px 1px 0;
+}
+
+.pokemonCard-back-content h5{
+    font-size: 16px;
+    font-weight: 300;
+    justify-self: flex-end;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0 1px 1px 0;
+}
+
+.percent-content {
+    width: 100%;
+    overflow: hidden;
+}
+
+.percent {
+    margin: 1px;
+    margin-right: 10px;
+    border-radius: 45px;
+}
+
