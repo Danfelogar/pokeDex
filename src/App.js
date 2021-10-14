@@ -101,7 +101,7 @@ function App() {
       <Router>
         <NavBar onSearch={ onSearch } />
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/">
           {
             notFound
             ?(<div className="notFound" >The searched pokemon was not found 😔</div>)
