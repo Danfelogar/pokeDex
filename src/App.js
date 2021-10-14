@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
@@ -53,7 +54,7 @@ function App() {
 
   useEffect(() => {
     fetchPokemon();
-  }, [page])
+  }, [page]);
 
   const updateFavoritePokemons = (props) =>{
     const updated = [...favorites];
@@ -100,7 +101,7 @@ function App() {
       <Router>
         <NavBar onSearch={ onSearch } />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/home">
           {
             notFound
             ?(<div className="notFound" >The searched pokemon was not found 😔</div>)
