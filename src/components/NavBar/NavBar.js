@@ -32,7 +32,7 @@ export const NavBar = ({onSearch}) => {
             <div/>
             <div className="navBar-wrap-logo">
                 <img
-                onClick={() => history.push("/home")}
+                onClick={() => history.push("/")}
                 src="https://datadex.talzz.com/_images/graphics/logo.png" alt="logo" className="navBar-img" />
             </div>
             <div className="navBar-wrap-input">
